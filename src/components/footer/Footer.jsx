@@ -16,7 +16,7 @@ function Footer() {
     return (
         <div className="footer-container">
             <div className="footer-left">
-                <h1 className="footer-logo">Rise Of Code.</h1>
+                <h1 className="footer-logo">Christelle C-A.</h1>
                 <p className="footer-desc">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit.
                     Quam commodi nam, praesentium ipsum aspernatur recusandae

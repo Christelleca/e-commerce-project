@@ -1,6 +1,7 @@
 import React from 'react';
 import './Categories.css';
 import { categories } from '../../data';
+import { Link } from 'react-router-dom';
 
 function Categories() {
     return (
@@ -10,7 +11,9 @@ function Categories() {
                     <img src={item.img} alt="" />
                     <div className="category-info">
                         <h1>{item.title}</h1>
-                        <button>Shop Now</button>
+                        <Link to="/products">
+                            <button>Shop Now</button>
+                        </Link>
                     </div>
                 </div>
             ))}
