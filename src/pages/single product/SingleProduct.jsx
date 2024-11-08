@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
 import './SingleProduct.css';
 import { allProducts } from '../../data';
@@ -10,7 +10,16 @@ function SingleProduct() {
     const product = allProducts.find((product) => product.id === parseInt(id));
 
     const colors = ['red', 'purple', 'teal', 'green', 'black'];
+    const [selectedColor, setSelectedColor] = useState(null);
+    const handleCircleClick = (color) => {
+        setSelectedColor(color);
+    };
+
     const sizes = ['xs', 's', 'm', 'l', 'xl'];
+    const [selectedSize, setSelectedSize] = useState(null);
+    const handleSizeClick = (size) => {
+        setSelectedSize(size);
+    };
 
     return (
         <div className="singleProduct-container">
@@ -42,7 +51,14 @@ function SingleProduct() {
                                     <div
                                         key={color}
                                         className="color-circle"
-                                        style={{ backgroundColor: color }}
+                                        style={{
+                                            backgroundColor: color,
+                                            outline:
+                                                selectedColor === color
+                                                    ? `3px solid ${color}`
+                                                    : '',
+                                        }}
+                                        onClick={() => handleCircleClick(color)}
                                     ></div>
                                 ))}
                             </div>
@@ -52,7 +68,18 @@ function SingleProduct() {
                             <h4>Size</h4>
                             <div className="sizes">
                                 {sizes.map((size) => (
-                                    <span key={size}>{size}</span>
+                                    <span
+                                        key={size}
+                                        style={{
+                                            border:
+                                                selectedSize === size
+                                                    ? '1px solid #ccc'
+                                                    : '',
+                                        }}
+                                        onClick={() => handleSizeClick(size)}
+                                    >
+                                        {size}
+                                    </span>
                                 ))}
                             </div>
                         </div>
