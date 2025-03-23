@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import './Slider.css';
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 import { sliderItems } from '../../data.jsx';

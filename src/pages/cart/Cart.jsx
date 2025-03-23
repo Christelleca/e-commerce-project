@@ -1,4 +1,3 @@
-import React from 'react';
 import './cart.css';
 import { useDispatch, useSelector } from 'react-redux';
 import Navbar from '../../components/navbar/Navbar';
@@ -11,7 +10,7 @@ import {
 import { IoClose } from 'react-icons/io5';
 import Footer from '../../components/footer/Footer';
 
-function cart() {
+function Cart() {
     const cartItems = useSelector((state) => state.cart.cartItems);
     const dispatch = useDispatch();
 
@@ -107,7 +106,7 @@ function cart() {
                                     </div>
                                     <div className="summary-item">
                                         <span>Total:</span>
-                                        <span>$ ={totalPrice.toFixed(2)}</span>
+                                        <span>${totalPrice.toFixed(2)}</span>
                                     </div>
                                 </div>
                                 <button className="checkout-btn">
@@ -123,4 +122,4 @@ function cart() {
     );
 }
 
-export default cart;
+export default Cart;
